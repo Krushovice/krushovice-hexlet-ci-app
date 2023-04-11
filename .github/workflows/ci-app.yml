@@ -13,3 +13,7 @@ jobs:
       - run: make setup
       - run: make test
       - run: make lint
+      - name: Run Snyk to check
+        uses: snyk/actions/node@main
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_API }}
